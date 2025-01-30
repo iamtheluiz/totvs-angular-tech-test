@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* Font */
+  --font-family-text: sans-serif;
+
+  // Font Weight
+  --font-weight-normal: 400;
+
+  // Font Size
+  --font-size-default: 1rem;
+
+  /* Border */
+
+  // Border Width
+  --border-width-sm: 1px;
+  --border-width-lg: 4px;
+
+  // Border Radius
+  --border-radius-md: 4px;
+
+  /* Color */
+  --color-neutral-light-30: #B4B4C0;
+  --color-neutral-dark-70: #515162;
+  --color-neutral-light-05: #F9F9FA;
+  --color-neutral-dark-90: #1D1D30;
+
+  --color-brand-01-dark: #1F1F7A;
+  --color-brand-01-lightest: #EBEBF5;
+  --color-action-default: #4545A1;
+  --color-action-focus: #030330;
+  --color-action-disabled: #B4B4C0;
+  --color-neutral-light-20: #D0D0D7;
+  --color-feedback-negative-base: #BE3E37;
+
+  --color-action-hover: var(--color-brand-01-dark);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+
+  box-sizing: border-box;
+}

@@ -1,1 +1,26 @@
+<main>
+  <form [formGroup]="statusForm" (submit)="handleSubmitForm()">
+    <app-select
+      name="stateSelect"
+      [options]="stateOptions"
+      placeholder="Selecione um estado"
+      formControlName="state"
+    />
+    <div>
+      <strong>Valor selecionado:</strong>
+    </div>
+    <button type="submit">Enviar</button>
+  </form>
+  <app-select
+    [(ngModel)]="genre"
+    name="genreSelect"
+    [options]="genreOptions"
+    placeholder="Selecione um gênero"
+    [disabled]="disabled"
+    [error]="error"
+  />
+  <button (click)="toggleDisabled()" type="button">Toggle disabled</button>
+  <button (click)="toggleError()" type="button">Toggle error</button>
+  {{genre}}
+</main>
 <router-outlet />

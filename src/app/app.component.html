@@ -1,26 +1,50 @@
 <main>
-  <form [formGroup]="statusForm" (submit)="handleSubmitForm()">
+  <fieldset>
+    <legend>Select and Switch - Reactive Form</legend>
+    <form [formGroup]="statusForm" (submit)="handleSubmitForm()">
+      <app-select
+        name="stateSelect"
+        [options]="stateOptions"
+        placeholder="Selecione um estado"
+        formControlName="state"
+      />
+      <div>
+        <strong>Valor selecionado: {{ statusForm.value.state }}</strong>
+      </div>
+      <app-switch formControlName="active" />
+      <div>
+        <strong>Valor selecionado: {{ statusForm.value.active }}</strong>
+      </div>
+      <button type="submit">Enviar</button>
+      {{ submittedReactiveFormValues | json }}
+    </form>
+  </fieldset>
+  <fieldset>
+    <legend>Select - ngModel</legend>
     <app-select
-      name="stateSelect"
-      [options]="stateOptions"
-      placeholder="Selecione um estado"
-      formControlName="state"
+      [(ngModel)]="genre"
+      name="genreSelect"
+      [options]="genreOptions"
+      placeholder="Selecione um gênero"
+      [disabled]="disabled"
+      [error]="error"
     />
-    <div>
-      <strong>Valor selecionado:</strong>
-    </div>
-    <button type="submit">Enviar</button>
-  </form>
-  <app-select
-    [(ngModel)]="genre"
-    name="genreSelect"
-    [options]="genreOptions"
-    placeholder="Selecione um gênero"
-    [disabled]="disabled"
-    [error]="error"
-  />
+    {{ genre }}
+  </fieldset>
+  <fieldset>
+    <legend>Switch - ngModel</legend>
+    <app-switch [(ngModel)]="autoPlay" [disabled]="disabled" />
+    {{ autoPlay }}
+  </fieldset>
+  <fieldset>
+    <legend>Switch - Event</legend>
+    <app-switch
+      (checkedChange)="handleRandomOrdemChange($event)"
+      [disabled]="disabled"
+    />
+    {{ randomOrder }}
+  </fieldset>
   <button (click)="toggleDisabled()" type="button">Toggle disabled</button>
   <button (click)="toggleError()" type="button">Toggle error</button>
-  {{genre}}
 </main>
 <router-outlet />

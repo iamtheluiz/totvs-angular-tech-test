@@ -12,6 +12,25 @@ export class AppComponent {
   disabled = false;
   error = false;
 
+  toggleDisabled() {
+    const newDisabledValue = !this.disabled;
+
+    this.disabled = newDisabledValue;
+
+    if (newDisabledValue) {
+      this.statusForm.get('state')?.disable();
+      this.statusForm.get('active')?.disable();
+    } else {
+      this.statusForm.get('state')?.enable();
+      this.statusForm.get('active')?.enable();
+    }
+  }
+
+  toggleError() {
+    this.error = !this.error;
+  }
+
+  /* Reactive Form Definitions */
   readonly stateOptions: Array<SelectOption> = [
     {
       label: "São Paulo",
@@ -27,7 +46,17 @@ export class AppComponent {
       value: "SC"
     }
   ]
+  statusForm = new FormGroup({
+    state: new FormControl(''),
+    active: new FormControl(false)
+  });
+  submittedReactiveFormValues: any;
 
+  handleSubmitForm() {
+    this.submittedReactiveFormValues = this.statusForm.value;
+  }
+
+  /* Select Component ngModel Definitions */
   genre?: SelectOptionValue;
   readonly genreOptions: Array<SelectOption> = [
     {
@@ -44,22 +73,13 @@ export class AppComponent {
     }
   ]
 
-  statusForm = new FormGroup({
-    state: new FormControl('action')
-  })
+  /* Switch Component ngModel Definition */
+  autoPlay = false;
 
-  handleSubmitForm() {
-    console.log(this.statusForm.value.state)
-  }
-  handleOnTouched() {
-    console.log("salve!")
-  }
+  /* Switch Component Event Definitions */
+  randomOrder = false;
 
-  toggleDisabled() {
-    this.disabled = !this.disabled;
-  }
-
-  toggleError() {
-    this.error = !this.error;
+  handleRandomOrdemChange(value: boolean) {
+    this.randomOrder = value;
   }
 }

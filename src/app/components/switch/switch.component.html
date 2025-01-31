@@ -1,0 +1,25 @@
+<div
+  #switch
+  class="container"
+  [class.checked]="checked"
+  [class.disabled]="disabled"
+  role="switch"
+  tabindex="0"
+  (click)="handleSwitchToggle()"
+  (keydown)="handleKeyDown($event)"
+>
+  <div class="track">
+    <div class="key">
+      <svg
+        width="12"
+        height="10"
+        viewBox="0 0 12 10"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 5.32608L4.55114 9.5L12 2.10491L10.3864 0.5L4.55114 6.30151L1.60227 3.49433L0 5.32608Z"
+        />
+      </svg>
+    </div>
+  </div>
+</div>

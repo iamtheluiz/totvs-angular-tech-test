@@ -12,12 +12,14 @@
 
   // Border Width
   --border-width-sm: 1px;
+  --border-width-md: 2px;
   --border-width-lg: 4px;
 
   // Border Radius
   --border-radius-md: 4px;
 
   /* Color */
+  --color-neutral-light-00: #FFF;
   --color-neutral-light-30: #B4B4C0;
   --color-neutral-dark-70: #515162;
   --color-neutral-light-05: #F9F9FA;
@@ -25,6 +27,7 @@
 
   --color-brand-01-dark: #1F1F7A;
   --color-brand-01-lightest: #EBEBF5;
+  --color-brand-01-light: #9898CD;
   --color-action-default: #4545A1;
   --color-action-focus: #030330;
   --color-action-disabled: #B4B4C0;
@@ -40,4 +43,11 @@
   border: 0px;
 
   box-sizing: border-box;
+}
+fieldset {
+  width: 100%;
+  max-width: 760px;
+  padding: 16px;
+  border: var(--border-width-md) solid var(--color-neutral-dark-70);
+  border-radius: var(--border-radius-md);
 }

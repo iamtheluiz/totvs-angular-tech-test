@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { SelectComponent } from './components/select/select.component';
+import { SwitchComponent } from './components/switch/switch.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        SelectComponent
+        SelectComponent,
+        SwitchComponent
       ],
     }).compileComponents();
   });

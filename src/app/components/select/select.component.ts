@@ -21,6 +21,7 @@ export class SelectComponent implements ControlValueAccessor {
   @Input() disabled = false;
   @Input() error?: boolean = false;
   @Input() options: Array<SelectOption> = [];
+  @Input() label = "";
 
   @ViewChild('select', { read: ElementRef, static: true }) selectElement: any;
 

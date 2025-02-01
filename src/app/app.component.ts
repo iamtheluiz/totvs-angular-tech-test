@@ -50,7 +50,7 @@ export class AppComponent {
     ),
     active: new FormControl(false)
   }, {
-    updateOn: "submit"
+    updateOn: "blur"
   });
 
   get state() {

@@ -1,4 +1,4 @@
-import { Component, ElementRef, forwardRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, forwardRef, Input, Output, ViewChild } from '@angular/core';
 import { SelectOption, SelectOptionValue } from './select-option';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -19,10 +19,10 @@ export class SelectComponent implements ControlValueAccessor {
   @Input() name = "";
   @Input() placeholder = "";
   @Input() disabled = false;
-  @Input() error = false;
+  @Input() error?: boolean = false;
   @Input() options: Array<SelectOption> = [];
 
-  @ViewChild('select', { read: ElementRef, static: true }) selectElement: any; 
+  @ViewChild('select', { read: ElementRef, static: true }) selectElement: any;
 
   selectedValue?: SelectOptionValue;
 

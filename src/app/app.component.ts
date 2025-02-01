@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SelectOption, SelectOptionValue } from './components/select/select-option';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AppComponent {
   disabled = false;
-  error = false;
 
   toggleDisabled() {
     const newDisabledValue = !this.disabled;
@@ -24,10 +23,6 @@ export class AppComponent {
       this.statusForm.get('state')?.enable();
       this.statusForm.get('active')?.enable();
     }
-  }
-
-  toggleError() {
-    this.error = !this.error;
   }
 
   /* Reactive Form Definitions */
@@ -46,14 +41,30 @@ export class AppComponent {
       value: "SC"
     }
   ]
+
   statusForm = new FormGroup({
-    state: new FormControl(''),
+    state: new FormControl('', [
+      Validators.required,
+      Validators.minLength(1)
+    ]
+    ),
     active: new FormControl(false)
+  }, {
+    updateOn: "submit"
   });
+
+  get state() {
+    return this.statusForm.get('state');
+  }
+
   submittedReactiveFormValues: any;
 
   handleSubmitForm() {
-    this.submittedReactiveFormValues = this.statusForm.value;
+    if (this.statusForm.valid) {
+      this.submittedReactiveFormValues = this.statusForm.value;
+    } else {
+      this.statusForm.markAllAsTouched();
+    }
   }
 
   /* Select Component ngModel Definitions */

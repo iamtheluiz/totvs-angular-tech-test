@@ -7,6 +7,7 @@
         [options]="stateOptions"
         placeholder="Selecione um estado"
         formControlName="state"
+        [error]="state?.invalid && (state?.touched || state?.dirty)"
       />
       <div>
         <strong>Valor selecionado: {{ statusForm.value.state }}</strong>
@@ -27,7 +28,6 @@
       [options]="genreOptions"
       placeholder="Selecione um gênero"
       [disabled]="disabled"
-      [error]="error"
     />
     {{ genre }}
   </fieldset>
@@ -45,6 +45,5 @@
     {{ randomOrder }}
   </fieldset>
   <button (click)="toggleDisabled()" type="button">Toggle disabled</button>
-  <button (click)="toggleError()" type="button">Toggle error</button>
 </main>
 <router-outlet />

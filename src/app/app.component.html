@@ -12,7 +12,7 @@
       <div>
         <strong>Valor selecionado: {{ statusForm.value.state }}</strong>
       </div>
-      <app-switch formControlName="active" />
+      <app-switch formControlName="active" label="Alternar estado:" />
       <div>
         <strong>Valor selecionado: {{ statusForm.value.active }}</strong>
       </div>
@@ -33,7 +33,11 @@
   </fieldset>
   <fieldset>
     <legend>Switch - ngModel</legend>
-    <app-switch [(ngModel)]="autoPlay" [disabled]="disabled" />
+    <app-switch
+      [(ngModel)]="autoPlay"
+      [disabled]="disabled"
+      label="Alternar reprodução automática:"
+    />
     {{ autoPlay }}
   </fieldset>
   <fieldset>
@@ -41,6 +45,7 @@
     <app-switch
       (checkedChange)="handleRandomOrdemChange($event)"
       [disabled]="disabled"
+      label="Alternar ordem aleatória:"
     />
     {{ randomOrder }}
   </fieldset>

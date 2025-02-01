@@ -16,7 +16,7 @@
   --color-checked-disabled: var(--color-action-disabled);
 }
 
-.container {
+.switch {
   height: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -82,8 +82,8 @@
   }
 
   // Disabled unchecked
-  &.disabled,
-  &.disabled:hover {
+  &[aria-disabled="true"],
+  &[aria-disabled="true"]:hover {
     * {
       cursor: not-allowed;
     }
@@ -95,7 +95,7 @@
     }
   }
 }
-.container.checked {
+.switch[aria-checked="true"] {
   .key {
     background-color: var(--color-checked);
 
@@ -120,8 +120,8 @@
   }
 
   // Disabled checked
-  &.disabled,
-  &.disabled:hover {
+  &[aria-disabled="true"],
+  &[aria-disabled="true"]:hover {
     * {
       cursor: not-allowed !important;
     }

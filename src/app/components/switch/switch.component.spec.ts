@@ -21,24 +21,24 @@ describe('SwitchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set "checked" class', () => {
+  it('should set "aria-checked" attribute', () => {
     component.checked = true;
 
     fixture.detectChanges();
 
     const switchElement = component.switchElement.nativeElement as HTMLDivElement;
 
-    expect(switchElement.classList.contains("checked")).toBe(true);
+    expect(switchElement.getAttribute("aria-checked")).toBe("true");
   })
 
-  it('should set "disabled" class', () => {
+  it('should set "aria-disabled" attribute', () => {
     component.disabled = true;
 
     fixture.detectChanges();
 
     const switchElement = component.switchElement.nativeElement as HTMLDivElement;
 
-    expect(switchElement.classList.contains("disabled")).toBe(true);
+    expect(switchElement.getAttribute("aria-disabled")).toBe("true");
   })
 
   it('should ignore "Enter" keydown code', () => {

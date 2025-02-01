@@ -129,4 +129,15 @@ describe('SelectComponent', () => {
 
   //   expect(component.onTouched).toHaveBeenCalled();
   // })
+
+  it('should set tabindex to -1 when disabled', () => {
+    component.disabled = true;
+    
+    fixture.detectChanges();
+
+    const switchElement = component.selectElement.nativeElement as HTMLDivElement;
+    
+    console.log(switchElement.getAttribute('tabindex'))
+    expect(switchElement.getAttribute('tabindex')).toBe('-1');
+  })
 });

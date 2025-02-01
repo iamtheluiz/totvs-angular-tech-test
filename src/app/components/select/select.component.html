@@ -5,6 +5,7 @@
   [class.placeholder]="placeholder && !selectedValue"
   [disabled]="disabled"
   (change)="handleSelectChange($event)"
+  [tabIndex]="disabled ? -1 : 0"
 >
   <option
     *ngIf="placeholder"

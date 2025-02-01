@@ -4,7 +4,7 @@
   [class.checked]="checked"
   [class.disabled]="disabled"
   role="switch"
-  tabindex="0"
+  [tabindex]="disabled ? -1 : 0"
   (click)="handleSwitchToggle()"
   (keydown)="handleKeyDown($event)"
 >

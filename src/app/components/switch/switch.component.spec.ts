@@ -91,6 +91,8 @@ describe('SwitchComponent', () => {
   it('should set tabindex to -1 when disabled', () => {
     component.disabled = true;
 
+    fixture.detectChanges();
+
     const switchElement = component.switchElement.nativeElement as HTMLDivElement;
     
     expect(switchElement.getAttribute('tabindex')).toBe('-1');

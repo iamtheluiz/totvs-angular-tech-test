@@ -14,6 +14,7 @@
 - [Sobre](#-sobre)
 - [Iniciando](#-iniciando)
 - [Testes](#-testes)
+- [Componentes](#-componentes)
 - [Autores](#-autores)
 
 ## 📖 Sobre
@@ -61,6 +62,69 @@ npm run test:ci
 
 > [!NOTE]
 > O comando "test:ci" gera um relatório de cobertura de testes em XML, que pode ser acessado em `coverage/report/cobertura-coverage.xml`, e um relatório dos casos de teste em `tests/results/junit.xml`.
+
+## 📦 Componentes
+
+Foram criados dois componentes para este projeto:
+
+### `app-select`
+
+Componente de seleção de opções, que recebe um array de objetos e exibe as opções em um dropdown.
+
+![Select](./.github/select-component.png)
+
+#### Entradas
+
+- `name: string` - Nome do campo
+- `placeholder: string` - Texto exibido quando nenhuma opção está selecionada
+- `disabled: boolean` - Define se o campo está desabilitado
+- `error: boolean` - Define se o campo está com erro
+- `options: Array<SelectOption>` - Array de objetos com as opções a serem exibidas
+- `label: string` - Label do campo (utilizado para acessibilidade)
+
+#### Uso
+
+```html
+<app-select
+  name="select"
+  placeholder="Selecione uma opção"
+  [disabled]="false"
+  [error]="false"
+  [options]="[
+    { value: '1', label: 'Opção 1' },
+    { value: '2', label: 'Opção 2' },
+    { value: '3', label: 'Opção 3' }
+  ]"
+  label="Selecione uma opção"
+/>
+```
+
+### `app-switch`
+
+Componente de switch, que exibe um botão de alternância.
+
+![Switch](./.github/switch-component.png)
+
+#### Entradas
+
+- `checked: boolean` - Define se o switch está ativo.
+- `disabled: boolean` - Define se o switch está desabilitado.
+- `label: string` - Label do campo (utilizado para acessibilidade).
+
+#### Saídas
+
+- `checkedChange: EventEmitter<boolean>` - Evento emitido quando o switch é ativado ou desativado.
+
+#### Uso
+
+```html
+<app-switch
+  [checked]="false"
+  [disabled]="false"
+  label="Ativar switch"
+  (checkedChange)="onSwitchChange($event)"
+/>
+```
 
 ## 💼 Autores
 

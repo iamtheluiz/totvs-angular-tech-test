@@ -7,6 +7,8 @@ module.exports = function (config) {
       require('karma-coverage'),
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage-istanbul-reporter'),
       require('karma-junit-reporter'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
@@ -14,18 +16,20 @@ module.exports = function (config) {
       clearContext: false
     },
     files: [],
-    preprocessors: {},
-    reporters: ['progress', 'junit', 'coverage'],
+    preprocessors: {
+      'src/**/*.ts': ['coverage'] // Process TypeScript files for coverage
+    },
+    reporters: ['progress', 'junit', 'coverage-istanbul'],
     junitReporter: {
       outputDir: 'tests/results',
       outputFile: 'junit.xml',
       suite: '',
       useBrowserName: false
     },
-    coverageReporter: {
-      type: 'html',
-      dir: 'coverage',
-      subdir: 'report'
+    coverageIstanbulReporter: {
+      dir: 'coverage/report',
+      reports: ['text-summary', 'cobertura'],
+      fixWebpackSourcePaths: true
     },
     port: 9876,
     colors: true,

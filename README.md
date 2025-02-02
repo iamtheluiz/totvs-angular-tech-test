@@ -1,5 +1,5 @@
 <p align="center">
-	<svg width="96px" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Angular</title><path d="M16.712 17.711H7.288l-1.204 2.916L12 24l5.916-3.373-1.204-2.916ZM14.692 0l7.832 16.855.814-12.856L14.692 0ZM9.308 0 .662 3.999l.814 12.856L9.308 0Zm-.405 13.93h6.198L12 6.396 8.903 13.93Z" fill="#de002d" /></svg>
+  <img src="./.github/angular.svg" alt="Angular" width="96" />
   <br>
   Teste Técnico - Desenvolvedor Front-End (Angular)
 </p>
@@ -9,10 +9,18 @@
   <img alt="Angular" src="https://img.shields.io/badge/-Angular-44475a?logo=angular&color=191622&logoColor=white" />
 </p>
 
+## 📝 Índice
+
+- [Sobre](#-sobre)
+- [Iniciando](#-iniciando)
+- [Testes](#-testes)
+- [Autores](#-autores)
+
 ## 📖 Sobre
 
-- A versão do NodeJS utilizada foi a 20.11.0
-- Este projeto foi gerado utilizando o [Angular CLI](https://github.com/angular/angular-cli) versão 19.1.4.
+- 🏷️ A versão do NodeJS utilizada foi a 20.11.0
+- 🖥️ Este projeto foi gerado utilizando o [Angular CLI](https://github.com/angular/angular-cli) versão 19.1.4.
+- 🔍 As orientações do teste estão disponíveis no arquivo [TODO.md](./TODO.md), contendo também os links para o handoff.
 
 ## 🏃 Iniciando
 
@@ -36,6 +44,23 @@ Por fim, inicie o servidor de desenvolvimento:
 ```bash
 npm run start
 ```
+
+## 📝 Testes
+
+Para executar os testes unitários, execute o comando:
+
+```bash
+npm run test
+```
+
+Também existe uma opção para executar os testes em um processo de esteiras (pipeline):
+
+```bash
+npm run test:ci
+```
+
+> [!NOTE]
+> O comando "test:ci" gera um relatório de cobertura de testes em XML, que pode ser acessado em `coverage/report/cobertura-coverage.xml`, e um relatório dos casos de teste em `tests/results/junit.xml`.
 
 ## 💼 Autores
 

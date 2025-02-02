@@ -1,59 +1,43 @@
-# TotvsAngularTechTest
+<p align="center">
+	<svg width="96px" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Angular</title><path d="M16.712 17.711H7.288l-1.204 2.916L12 24l5.916-3.373-1.204-2.916ZM14.692 0l7.832 16.855.814-12.856L14.692 0ZM9.308 0 .662 3.999l.814 12.856L9.308 0Zm-.405 13.93h6.198L12 6.396 8.903 13.93Z" fill="#de002d" /></svg>
+  <br>
+  Teste Técnico - Desenvolvedor Front-End (Angular)
+</p>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
+<p align="center">
+  <img alt="Typescript" src="https://img.shields.io/badge/-Typescript-44475a?logo=typescript&color=191622&logoColor=white" />
+  <img alt="Angular" src="https://img.shields.io/badge/-Angular-44475a?logo=angular&color=191622&logoColor=white" />
+</p>
 
-## Development server
+## 📖 Sobre
 
-To start a local development server, run:
+- A versão do NodeJS utilizada foi a 20.11.0
+- Este projeto foi gerado utilizando o [Angular CLI](https://github.com/angular/angular-cli) versão 19.1.4.
 
-```bash
-ng serve
-```
+## 🏃 Iniciando
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Primeiro, clone este repositório e acesse a pasta criada:
 
 ```bash
-ng generate --help
+# Cloning repository
+git clone https://github.com/iamtheluiz/totvs-angular-tech-test.git
+
+cd totvs-angular-tech-test/
 ```
 
-## Building
-
-To build the project run:
+Instale todas as dependências do NodeJS:
 
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Por fim, inicie o servidor de desenvolvimento:
 
 ```bash
-ng test
+npm run start
 ```
 
-## Running end-to-end tests
+## 💼 Autores
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- **Luiz Gustavo da Silva Vasconcellos** - [iamtheluiz](https://github.com/iamtheluiz)
+  - LinkedIn: [Luiz Gustavo da Silva Vasconcellos](https://www.linkedin.com/in/luiz-gustavo-da-silva-vasconcellos)

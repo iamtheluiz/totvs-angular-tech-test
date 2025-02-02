@@ -5,6 +5,9 @@
   [class.placeholder]="placeholder && !selectedValue"
   [disabled]="disabled"
   (change)="handleSelectChange($event)"
+  (blur)="onTouched()"
+  [tabIndex]="disabled ? -1 : 0"
+  [ariaLabel]="label"
 >
   <option
     *ngIf="placeholder"

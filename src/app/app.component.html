@@ -7,15 +7,17 @@
         [options]="stateOptions"
         placeholder="Selecione um estado"
         formControlName="state"
+        [error]="state?.invalid && (state?.touched || state?.dirty)"
+        label="Seleção de Estado"
       />
       <div>
         <strong>Valor selecionado: {{ statusForm.value.state }}</strong>
       </div>
-      <app-switch formControlName="active" />
+      <app-switch formControlName="active" label="Alternar estado:" />
       <div>
         <strong>Valor selecionado: {{ statusForm.value.active }}</strong>
       </div>
-      <button type="submit">Enviar</button>
+      <button type="submit" [disabled]="statusForm.invalid">Enviar</button>
       {{ submittedReactiveFormValues | json }}
     </form>
   </fieldset>
@@ -25,15 +27,19 @@
       [(ngModel)]="genre"
       name="genreSelect"
       [options]="genreOptions"
-      placeholder="Selecione um gênero"
+      placeholder="Selecione uma categoria"
       [disabled]="disabled"
-      [error]="error"
+      label="Seleção de Categoria"
     />
     {{ genre }}
   </fieldset>
   <fieldset>
     <legend>Switch - ngModel</legend>
-    <app-switch [(ngModel)]="autoPlay" [disabled]="disabled" />
+    <app-switch
+      [(ngModel)]="autoPlay"
+      [disabled]="disabled"
+      label="Alternar reprodução automática:"
+    />
     {{ autoPlay }}
   </fieldset>
   <fieldset>
@@ -41,10 +47,10 @@
     <app-switch
       (checkedChange)="handleRandomOrdemChange($event)"
       [disabled]="disabled"
+      label="Alternar ordem aleatória:"
     />
     {{ randomOrder }}
   </fieldset>
   <button (click)="toggleDisabled()" type="button">Toggle disabled</button>
-  <button (click)="toggleError()" type="button">Toggle error</button>
 </main>
 <router-outlet />

@@ -122,11 +122,21 @@ describe('SelectComponent', () => {
   })
 
   it('should execute onTouched when the select looses focus', () => {
-    spyOn(component, 'onTouched');
-    
-    const selectElement = component.selectElement.nativeElement as HTMLSelectElement;
-    selectElement.dispatchEvent(new Event('blur'));
+    const onTouchedSpy = spyOn(component, "onTouched").and.callThrough();
 
-    expect(component.onTouched).toHaveBeenCalled();
+    const selectElement = component.selectElement.nativeElement as HTMLSelectElement;
+    selectElement.dispatchEvent(new Event("blur"));
+
+    expect(onTouchedSpy).toHaveBeenCalled();
+  })
+
+  it('should set tabindex to -1 when disabled', () => {
+    component.disabled = true;
+
+    fixture.detectChanges();
+
+    const switchElement = component.selectElement.nativeElement as HTMLDivElement;
+
+    expect(switchElement.getAttribute('tabindex')).toBe('-1');
   })
 });

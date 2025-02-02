@@ -1,6 +1,9 @@
+/* Import Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   /* Font */
-  --font-family-text: sans-serif;
+  --font-family-text: Roboto, sans-serif;
 
   // Font Weight
   --font-weight-normal: 400;
@@ -50,4 +53,7 @@ fieldset {
   padding: 16px;
   border: var(--border-width-md) solid var(--color-neutral-dark-70);
   border-radius: var(--border-radius-md);
+}
+body, input, textarea, button {
+  font-family: var(--font-family-text);
 }

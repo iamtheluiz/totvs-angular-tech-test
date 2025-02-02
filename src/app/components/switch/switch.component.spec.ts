@@ -21,24 +21,24 @@ describe('SwitchComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should set "checked" class', () => {
+  it('should set "aria-checked" attribute', () => {
     component.checked = true;
 
     fixture.detectChanges();
 
     const switchElement = component.switchElement.nativeElement as HTMLDivElement;
 
-    expect(switchElement.classList.contains("checked")).toBe(true);
+    expect(switchElement.getAttribute("aria-checked")).toBe("true");
   })
 
-  it('should set "disabled" class', () => {
+  it('should set "aria-disabled" attribute', () => {
     component.disabled = true;
 
     fixture.detectChanges();
 
     const switchElement = component.switchElement.nativeElement as HTMLDivElement;
 
-    expect(switchElement.classList.contains("disabled")).toBe(true);
+    expect(switchElement.getAttribute("aria-disabled")).toBe("true");
   })
 
   it('should ignore "Enter" keydown code', () => {
@@ -88,8 +88,19 @@ describe('SwitchComponent', () => {
     expect(component.checked).toBe(false);
   })
 
+  it('should execute onTouched when the switch looses focus', () => {
+    const onTouchedSpy = spyOn(component, "onTouched").and.callThrough();
+
+    const switchElement = component.switchElement.nativeElement as HTMLDivElement;
+    switchElement.dispatchEvent(new Event("blur"));
+
+    expect(onTouchedSpy).toHaveBeenCalled();
+  })
+
   it('should set tabindex to -1 when disabled', () => {
     component.disabled = true;
+
+    fixture.detectChanges();
 
     const switchElement = component.switchElement.nativeElement as HTMLDivElement;
     

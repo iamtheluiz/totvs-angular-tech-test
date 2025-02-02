@@ -1,11 +1,13 @@
 <div
   #switch
-  class="container"
-  [class.checked]="checked"
-  [class.disabled]="disabled"
+  class="switch"
   role="switch"
-  tabindex="0"
+  [ariaChecked]="checked"
+  [ariaDisabled]="disabled"
+  [ariaLabel]="label"
+  [tabindex]="disabled ? -1 : 0"
   (click)="handleSwitchToggle()"
+  (blur)="onTouched()"
   (keydown)="handleKeyDown($event)"
 >
   <div class="track">

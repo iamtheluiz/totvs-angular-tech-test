@@ -17,7 +17,7 @@
       <div>
         <strong>Valor selecionado: {{ statusForm.value.active }}</strong>
       </div>
-      <button type="submit" [disabled]="statusForm.invalid">Enviar</button>
+      <button type="submit" [disabled]="statusForm.invalid || disabled">Enviar</button>
       {{ submittedReactiveFormValues | json }}
     </form>
   </fieldset>

@@ -1,0 +1,37 @@
+<main>
+  <fieldset>
+    <legend>Select - Visão Geral (Normal)</legend>
+    <span>Empty</span>
+    <app-select [options]="options" placeholder="Choose an option" />
+    <span>Selected</span>
+    <app-select [(ngModel)]="selectedOption" [options]="options" placeholder="Choose an option" />
+  </fieldset>
+  <fieldset>
+    <legend>Select - Visão Geral (Disabled)</legend>
+    <span>Empty</span>
+    <app-select [options]="options" placeholder="Choose an option" [disabled]="true" />
+    <span>Selected</span>
+    <app-select [(ngModel)]="selectedOption" [options]="options" placeholder="Choose an option" [disabled]="true" />
+  </fieldset>
+  <fieldset>
+    <legend>Select - Visão Geral (Error)</legend>
+    <span>Empty</span>
+    <app-select [options]="options" placeholder="Choose an option" [error]="true" />
+    <span>Selected</span>
+    <app-select [(ngModel)]="selectedOption" [options]="options" placeholder="Choose an option" [error]="true" />
+  </fieldset>
+  <fieldset>
+    <legend>Switch - Visão Geral (Normal)</legend>
+    <span>Unchecked</span>
+    <app-switch />
+    <span>Checked</span>
+    <app-switch [checked]="true" />
+  </fieldset>
+  <fieldset>
+    <legend>Switch - Visão Geral (Disabled)</legend>
+    <span>Unchecked</span>
+    <app-switch [disabled]="true" />
+    <span>Checked</span>
+    <app-switch [checked]="true" [disabled]="true" />
+  </fieldset>
+</main>

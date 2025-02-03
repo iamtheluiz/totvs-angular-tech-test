@@ -1,0 +1,141 @@
+:host {
+  --color-unchecked: var(--color-neutral-light-00);
+  --border-color: var(--color-neutral-dark-70);
+  --track-unchecked: var(--color-neutral-light-20);
+
+  --color-checked: var(--color-action-default);
+  --track-checked: var(--color-brand-01-light);
+
+  --color-unchecked-hover: var(--color-brand-01-lightest);
+
+  --color-checked-hover: var(--color-action-hover);
+
+  --outline-color-focused: var(--color-action-focus);
+
+  --color-unchecked-disabled: var(--color-neutral-light-20);
+  --color-checked-disabled: var(--color-action-disabled);
+}
+
+.switch {
+  height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: fit-content;
+
+  position: relative;
+
+  .track {
+    background-color: var(--track-unchecked);
+
+    height: 1rem;
+    width: 3rem;
+
+    border-radius: 400px;
+
+    transition: background-color 0.3s;
+  }
+  .key {
+    background-color: var(--color-unchecked);
+    border-color: var(--border-color);
+
+    border-width: var(--border-width-md);
+    border-radius: 100%;
+    border-style: solid;
+    height: 1.5rem;
+    width: 1.5rem;
+
+    position: absolute;
+    top: 0;
+
+    transition: all 0.3s;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    fill: transparent;
+
+    transition: fill 0.3s;
+  }
+
+  // Unchecked hover
+  :hover {
+    cursor: pointer;
+
+    .key {
+      background-color: var(--color-unchecked-hover);
+
+      border-color: var(--color-checked-hover);
+    }
+  }
+
+  &:focus-visible {
+    outline-color: var(--outline-color-focused);
+
+    outline-width: var(--border-width-lg);
+    outline-style: solid;
+    outline-offset: 2px;
+  }
+
+  // Disabled unchecked
+  &[aria-disabled="true"],
+  &[aria-disabled="true"]:hover {
+    * {
+      cursor: not-allowed;
+    }
+
+    .key {
+      background-color: var(--color-unchecked-disabled);
+
+      border-color: var(--color-checked-disabled);
+    }
+  }
+}
+.switch[aria-checked="true"] {
+  .key {
+    background-color: var(--color-checked);
+
+    border-color: transparent;
+
+    transform: translateX(1.5rem);
+  }
+  .track {
+    background-color: var(--track-checked);
+  }
+  svg {
+    fill: var(--color-unchecked);
+  }
+
+  // Checked hover
+  :hover {
+    cursor: pointer;
+
+    .key {
+      background-color: var(--color-checked-hover);
+    }
+  }
+
+  // Disabled checked
+  &[aria-disabled="true"],
+  &[aria-disabled="true"]:hover {
+    * {
+      cursor: not-allowed !important;
+    }
+
+    .key {
+      background-color: var(--color-checked-disabled);
+
+      svg {
+        fill: var(--color-unchecked-disabled);
+      }
+    }
+
+    .track {
+      background-color: var(--track-unchecked);
+    }
+  }
+}

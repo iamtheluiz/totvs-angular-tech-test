@@ -1,0 +1,29 @@
+<select
+  #select
+  [name]="name"
+  [class.error]="error"
+  [class.placeholder]="placeholder && !selectedValue"
+  [disabled]="disabled"
+  (change)="handleSelectChange($event)"
+  (blur)="onTouched()"
+  [tabIndex]="disabled ? -1 : 0"
+  [ariaLabel]="label"
+>
+  <option
+    *ngIf="placeholder"
+    value=""
+    [hidden]="!placeholder"
+    [selected]="!selectedValue"
+    disabled
+  >
+    {{ placeholder }}
+  </option>
+  <option
+    *ngFor="let option of options"
+    [value]="option.value"
+    [disabled]="option.disabled"
+    [selected]="selectedValue === option.value"
+  >
+    {{ option.label }}
+  </option>
+</select>

@@ -1,1 +1,98 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Font */
+  --font-family-text: Roboto, sans-serif;
+
+  // Font Weight
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  // Font Size
+  --font-size-default: 1rem;
+
+  /* Border */
+
+  // Border Width
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 4px;
+
+  // Border Radius
+  --border-radius-md: 4px;
+
+  /* Color */
+  --color-transparent: transparent;
+  --color-neutral-light-00: #fff;
+  --color-neutral-light-30: #b4b4c0;
+  --color-neutral-dark-70: #515162;
+  --color-neutral-light-05: #f9f9fa;
+  --color-neutral-dark-90: #1d1d30;
+
+  --color-brand-01-darkest: #260538;
+  --color-brand-01-darker: #0d0d59;
+  --color-brand-01-dark: #1f1f7a;
+  --color-brand-01-lightest: #ebebf5;
+  --color-brand-01-lighter: #d9c2e5;
+  --color-brand-01-light: #9898cd;
+  --color-action-default: #4545a1;
+  --color-action-focus: #030330;
+  --color-action-disabled: #b4b4c0;
+  --color-neutral-light-20: #d0d0d7;
+  --color-feedback-negative-base: #be3e37;
+
+  --color-action-hover: var(--color-brand-01-dark);
+  --color-action-pressed: var(--color-brand-01-darker);
+
+  /* Header */
+  --header-height: 40px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+
+  box-sizing: border-box;
+}
+fieldset {
+  width: 100%;
+  max-width: 760px;
+  padding: 16px;
+  border: var(--border-width-md) solid var(--color-neutral-dark-70);
+  border-radius: var(--border-radius-md);
+}
+body,
+input,
+textarea,
+button {
+  font-family: var(--font-family-text);
+}
+
+button {
+  height: 44px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  border: 2px solid var(--color-action-default);
+  background-color: transparent;
+  color: var(--color-action-default);
+}
+button:hover:enabled {
+  background-color: #d9c2e5 !important;
+  border-color: var(--color-brand-01-darkest);
+  color: var(--color-brand-01-darkest);
+}
+button:active:enabled {
+  filter: brightness(0.9);
+}
+button:disabled {
+  background-color: var(--color-transparent);
+  color: var(--color-neutral-light-30);
+  border-color: var(--color-neutral-light-30);
+  cursor: not-allowed;
+}

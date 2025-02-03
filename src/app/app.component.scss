@@ -1,0 +1,26 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  height: var(--header-height);
+  padding: 8px;
+
+  a {
+    color: var(--color-action-default);
+    font-weight: var(--font-weight-bold);
+  }
+  a:hover {
+    color: var(--color-action-hover);
+  }
+  a:active {
+    color: var(--color-action-pressed);
+  }
+  a:focus {
+    outline-color: #260538;
+    outline-style: solid;
+    outline-offset: 2px;
+    outline-width: var(--border-width-lg);
+  }
+}

@@ -14,7 +14,12 @@
 - [Sobre](#-sobre)
 - [Iniciando](#-iniciando)
 - [Testes](#-testes)
+- [Build](#-build)
 - [Componentes](#-componentes)
+  - [`app-select`](#app-select)
+  - [`app-switch`](#app-switch)
+- [Issues e Pull Requests](#%EF%B8%8F-issues-e-pull-requests)
+- [CI/CD (Azure DevOps)](#-cicd-azure-devops)
 - [Autores](#-autores)
 
 ## 📖 Sobre
@@ -25,7 +30,10 @@
 
 ## 🏃 Iniciando
 
-Primeiro, clone este repositório e acesse a pasta criada:
+> [!NOTE]
+> [Executar no StackBlitz](https://stackblitz.com/github/iamtheluiz/totvs-angular-tech-test) • Este projeto pode ser executado no StackBlitz, uma IDE online para desenvolvimento web.
+
+Para executar localmente, clone este repositório e acesse a pasta criada:
 
 ```bash
 # Cloning repository
@@ -62,6 +70,16 @@ npm run test:ci
 
 > [!NOTE]
 > O comando "test:ci" gera um relatório de cobertura de testes em XML, que pode ser acessado em `coverage/report/cobertura-coverage.xml`, e um relatório dos casos de teste em `tests/results/junit.xml`.
+
+## 🔨 Build
+
+Para compilar o projeto, execute:
+
+```bash
+npm run build
+```
+
+Isso irá compilar o projeto e armazenar os artefatos de build no diretório `dist/`. Por padrão, o build de produção otimiza sua aplicação para desempenho e velocidade.
 
 ## 📦 Componentes
 
@@ -125,6 +143,32 @@ Componente de switch, que exibe um botão de alternância.
   (checkedChange)="onSwitchChange($event)"
 />
 ```
+
+## 🛠️ Issues e Pull Requests
+
+Durante o desenvolvimento deste projeto, foram criadas as seguintes issues e pull requests para gerenciar as tarefas e melhorias:
+
+### Issues
+- **[#1 - Feat: Select Component](https://github.com/iamtheluiz/totvs-angular-tech-test/issues/1)**
+- **[#2 - Feat: Switch Component](https://github.com/iamtheluiz/totvs-angular-tech-test/issues/2)**
+- **[#5 - Feat: Pipeline with a Pull Request Trigger](https://github.com/iamtheluiz/totvs-angular-tech-test/issues/5)**
+
+### Pull Requests
+- **[PR #3 - Feat/select component](https://github.com/iamtheluiz/totvs-angular-tech-test/pull/3)**: Implementa o componente "select".
+- **[PR #4 - Feat/switch component](https://github.com/iamtheluiz/totvs-angular-tech-test/pull/4)**: Implementa o componente "switch".
+- **[PR #6 - Feat/components review](https://github.com/iamtheluiz/totvs-angular-tech-test/pull/6)**: Revisa os componentes "select" e "switch", implementando requisitos de acessibilidade.
+- **[PR #7 - Feat/components sample](https://github.com/iamtheluiz/totvs-angular-tech-test/pull/7)**: Adiciona paginação para a aplicação, considerando as páginas "home" e "samples".
+
+> [!NOTE]
+> As issues e PRs foram utilizadas para organizar o processo, permitindo um melhor acompanhamento do progresso e das mudanças realizadas.
+
+## 🚀 CI/CD (Azure DevOps)
+
+Este projeto possui um pipeline de CI/CD configurado no Azure DevOps, que executa os testes unitários e cobertura.
+- [totvs-angular-tech-test-CI](https://dev.azure.com/luiz-vasconcellos/TOTVS%20-%20Angular%20Test/_build?definitionId=1)
+
+> [!NOTE]
+> Sua execução é acionada ao detectar alterações nas branches `main` e `develop`, e ao criar um pull request para elas.
 
 ## 💼 Autores
 

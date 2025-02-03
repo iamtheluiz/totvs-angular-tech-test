@@ -1,0 +1,61 @@
+<main>
+  <fieldset>
+    <legend>Select and Switch - Reactive Form</legend>
+    <form [formGroup]="statusForm" (submit)="handleSubmitForm()">
+      <app-select
+        name="stateSelect"
+        [options]="stateOptions"
+        placeholder="Selecione um estado"
+        formControlName="state"
+        [error]="state?.invalid && (state?.touched || state?.dirty)"
+        label="Seleção de Estado"
+      />
+      <div>
+        <strong>Valor selecionado: {{ statusForm.value.state }}</strong>
+      </div>
+      <app-switch formControlName="active" label="Alternar estado:" />
+      <div>
+        <strong>Valor selecionado: {{ statusForm.value.active }}</strong>
+      </div>
+      <button type="submit" [disabled]="statusForm.invalid">Enviar</button>
+      {{ submittedReactiveFormValues | json }}
+    </form>
+  </fieldset>
+  <fieldset>
+    <legend>Select - ngModel</legend>
+    <app-select
+      [(ngModel)]="genre"
+      name="genreSelect"
+      [options]="genreOptions"
+      placeholder="Selecione uma categoria"
+      [disabled]="disabled"
+      label="Seleção de Categoria"
+    />
+    <div>
+      <strong>Valor selecionado: {{ genre }}</strong>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Switch - ngModel</legend>
+    <app-switch
+      [(ngModel)]="autoPlay"
+      [disabled]="disabled"
+      label="Alternar reprodução automática:"
+    />
+    <div>
+      <strong>Valor selecionado: {{ autoPlay }}</strong>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Switch - Event</legend>
+    <app-switch
+      (checkedChange)="handleRandomOrdemChange($event)"
+      [disabled]="disabled"
+      label="Alternar ordem aleatória:"
+    />
+    <div>
+      <strong>Valor selecionado: {{ randomOrder }}</strong>
+    </div>
+  </fieldset>
+  <button (click)="toggleDisabled()" type="button">Toggle disabled</button>
+</main>

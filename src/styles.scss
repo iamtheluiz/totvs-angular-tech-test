@@ -7,6 +7,7 @@
 
   // Font Weight
   --font-weight-normal: 400;
+  --font-weight-bold: 700;
 
   // Font Size
   --font-size-default: 1rem;
@@ -29,6 +30,7 @@
   --color-neutral-dark-90: #1D1D30;
 
   --color-brand-01-dark: #1F1F7A;
+  --color-brand-01-darker: #0D0D59;
   --color-brand-01-lightest: #EBEBF5;
   --color-brand-01-light: #9898CD;
   --color-action-default: #4545A1;
@@ -38,6 +40,10 @@
   --color-feedback-negative-base: #BE3E37;
 
   --color-action-hover: var(--color-brand-01-dark);
+  --color-action-pressed: var(--color-brand-01-darker);
+
+  /* Header */
+  --header-height: 40px;
 }
 
 * {

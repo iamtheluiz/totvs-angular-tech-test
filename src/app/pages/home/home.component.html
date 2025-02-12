@@ -28,7 +28,9 @@
       <button type="submit" [disabled]="statusForm.invalid || disabled">
         Enviar
       </button>
-      {{ submittedReactiveFormValues | json }}
+      <div>
+        <strong>{{ submittedReactiveFormValues | json }}</strong>
+      </div>
     </form>
   </fieldset>
   <fieldset>

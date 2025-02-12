@@ -13,11 +13,21 @@
       <div>
         <strong>Valor selecionado: {{ statusForm.value.state }}</strong>
       </div>
+      <app-input
+        label="Digite sua cidade"
+        placeholder="Ex: Itanhaém"
+        formControlName="city"
+      />
+      <div>
+        <strong>Valor selecionado: {{ statusForm.value.city }}</strong>
+      </div>
       <app-switch formControlName="active" label="Alternar estado:" />
       <div>
         <strong>Valor selecionado: {{ statusForm.value.active }}</strong>
       </div>
-      <button type="submit" [disabled]="statusForm.invalid || disabled">Enviar</button>
+      <button type="submit" [disabled]="statusForm.invalid || disabled">
+        Enviar
+      </button>
       {{ submittedReactiveFormValues | json }}
     </form>
   </fieldset>
@@ -49,12 +59,19 @@
   <fieldset>
     <legend>Switch - Event</legend>
     <app-switch
-      (checkedChange)="handleRandomOrdemChange($event)"
+      (checkedChange)="handleRandomOrderChange($event)"
       [disabled]="disabled"
       label="Alternar ordem aleatória:"
     />
     <div>
       <strong>Valor selecionado: {{ randomOrder }}</strong>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Input - ngModel</legend>
+    <app-input [(ngModel)]="textInputValue" [disabled]="disabled" />
+    <div>
+      <strong>Valor selecionado: {{ textInputValue }}</strong>
     </div>
   </fieldset>
   <button (click)="toggleDisabled()" type="button">Toggle disabled</button>

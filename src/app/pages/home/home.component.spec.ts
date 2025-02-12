@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectComponent } from '../../components/select/select.component';
 import { SwitchComponent } from '../../components/switch/switch.component';
+import { InputComponent } from '../../components/input/input.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -14,7 +15,8 @@ describe('HomeComponent', () => {
       declarations: [
         HomeComponent,
         SelectComponent,
-        SwitchComponent
+        SwitchComponent,
+        InputComponent
       ],
       imports: [
         FormsModule,

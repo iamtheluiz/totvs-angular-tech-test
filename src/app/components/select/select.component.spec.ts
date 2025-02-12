@@ -95,7 +95,6 @@ describe('SelectComponent', () => {
     const selectElement = component.selectElement.nativeElement as HTMLSelectElement;
     selectElement.value = "2";
     selectElement.dispatchEvent(new Event('change'));
-    tick();
 
     expect(selectedValue).toBe("2");
     expect(component.selectedValue).toBe("2");

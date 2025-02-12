@@ -1,0 +1,63 @@
+:host {
+  --font-family: var(--font-family-text);
+  --font-size: var(--font-size-default);
+  --text-color-placeholder: var(--color-neutral-light-30);
+  --color: var(--color-neutral-dark-70);
+
+  --background: var(--color-neutral-light-05);
+
+  --padding: 0 0.5rem;
+
+  --text-color: var(--color-neutral-dark-90);
+  --color-hover: var(--color-brand-01-dark);
+  --background-hover: var(--color-brand-01-lightest);
+  --color-focused: var(--color-action-default);
+  --outline-color-focused: var(--color-action-focus);
+  --color-disabled: var(--color-neutral-light-30);
+  --background-disabled: var(--color-neutral-light-20);
+  --text-color-disabled: var(--color-neutral-dark-70);
+}
+input {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: var(--color);
+
+  background-color: var(--background);
+  padding: var(--padding);
+  border: 1px solid var(--color);
+  border-radius: 4px;
+
+  min-height: 2.75em;
+  box-sizing: border-box;
+  width: 100%;
+}
+input:hover {
+  border-color: var(--color-hover);
+  background-color: var(--background-hover);
+}
+input:focus {
+  border-color: var(---color-focused);
+
+  outline-color: var(--outline-color-focused);
+  outline-width: 4px;
+  outline-style: solid;
+  outline-offset: 2px;
+}
+input:disabled {
+  border-color: var(--color-disabled);
+  background-color: var(--background-disabled);
+  color: var(--text-color-disabled);
+  cursor: not-allowed;
+}
+input::placeholder {
+  color: var(--text-color-placeholder);
+}
+
+label {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: 150%;
+  color: var(--text-color);
+  font-weight: var(--font-weight-normal);
+  text-align: left;
+}

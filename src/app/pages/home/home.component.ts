@@ -13,6 +13,7 @@ export class HomeComponent {
   genre?: SelectOptionValue;  // Select Component ngModel Definition
   autoPlay = false; // Switch Component ngModel Definition
   randomOrder = false;  // Switch Component Event Definition
+  textInputValue = "";  // Input Component ngModel Definition
 
   submittedReactiveFormValues: any; // Store the form values when the form is submitted
 
@@ -52,6 +53,7 @@ export class HomeComponent {
       Validators.required,
       Validators.minLength(1)
     ]),
+    city: new FormControl(''),
     active: new FormControl(false)
   }, {
     updateOn: "blur"
@@ -69,7 +71,7 @@ export class HomeComponent {
     }
   }
 
-  handleRandomOrdemChange(value: boolean) {
+  handleRandomOrderChange(value: boolean) {
     this.randomOrder = value;
   }
 
@@ -81,9 +83,11 @@ export class HomeComponent {
     if (newDisabledValue) {
       this.statusForm.get('state')?.disable();
       this.statusForm.get('active')?.disable();
+      this.statusForm.get('city')?.disable();
     } else {
       this.statusForm.get('state')?.enable();
       this.statusForm.get('active')?.enable();
+      this.statusForm.get('city')?.enable();
     }
   }
 }

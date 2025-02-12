@@ -1,0 +1,10 @@
+<label [htmlFor]="id" *ngIf="label !== ''">{{ label }}</label>
+<input
+  #input
+  [id]="id"
+  [placeholder]="placeholder"
+  [disabled]="disabled"
+  [tabIndex]="disabled ? -1 : 0"
+  (change)="handleInputChange($event)"
+  (blur)="onTouched()"
+/>

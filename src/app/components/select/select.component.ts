@@ -1,4 +1,4 @@
-import { Component, ElementRef, forwardRef, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, forwardRef, Input, ViewChild } from '@angular/core';
 import { SelectOption, SelectOptionValue } from './select-option';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 

@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SwitchComponent } from './components/switch/switch.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SamplesComponent } from './pages/samples/samples.component';
+import { InputComponent } from './components/input/input.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SamplesComponent } from './pages/samples/samples.component';
     SelectComponent,
     SwitchComponent,
     HomeComponent,
-    SamplesComponent
+    SamplesComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
